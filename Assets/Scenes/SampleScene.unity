@@ -598,6 +598,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1506501817}
   - {fileID: 1871145001}
   - {fileID: 1252049751}
   m_Father: {fileID: 0}
@@ -705,6 +706,54 @@ Transform:
   - {fileID: 690898038}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 26.611, y: 0, z: 0.02}
+--- !u!1 &1506501816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1506501817}
+  - component: {fileID: 1506501818}
+  m_Layer: 0
+  m_Name: GridSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1506501817
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506501816}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.025, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1045974958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1506501818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506501816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41a26ae0a80253843aef865326a490d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cellPrefab: {fileID: 6896423726062972739, guid: af217b00db5eac249a25a419dc0cd2df,
+    type: 3}
+  gridWidth: 10
+  gridHeight: 10
 --- !u!1 &1871145000
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,7 +827,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -6237,6 +6286,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 157210779288965783, guid: e7b63e01709c3bf48a7298db4a3be011,
     type: 3}
   playerSpawnPoint: {fileID: 1252049751}
+  virtualCamera: {fileID: 1388391353}
 --- !u!1001 &6036885729013624378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6248,17 +6298,17 @@ PrefabInstance:
     - target: {fileID: 5467427929212492099, guid: 875ed78d5652c06429667d1603e254b9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.356369
+      value: -1.07
       objectReference: {fileID: 0}
     - target: {fileID: 5467427929212492099, guid: 875ed78d5652c06429667d1603e254b9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.125369
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 5467427929212492099, guid: 875ed78d5652c06429667d1603e254b9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.676757
+      value: 15.21
       objectReference: {fileID: 0}
     - target: {fileID: 5467427929212492099, guid: 875ed78d5652c06429667d1603e254b9,
         type: 3}
