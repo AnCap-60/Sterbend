@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.EntityComponents.Movement;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -27,7 +28,8 @@ namespace Assets.Scripts.EntityComponents
 		void Move(Vector2 dir)
 		{
 			Debug.Log("Move: " + dir);
-			Transform.position += new Vector3(dir.x, 0f, dir.y);
+			DOTween.To(() => Transform.position, x => Transform.position = x, Transform.position + new Vector3(dir.x, 0f, dir.y), 0.2f).OnComplete(() => MoveEvent.Invoke());
+			//Transform.position += new Vector3(dir.x, 0f, dir.y);
 		}
 	}
 }

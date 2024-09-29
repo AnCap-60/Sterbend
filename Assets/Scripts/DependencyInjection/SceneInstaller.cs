@@ -4,12 +4,17 @@ using Zenject;
 
 public class SceneInstaller : MonoInstaller
 {
-    [SerializeField] private GameObject player;
+	[SerializeField]
+	private Player playerPrefab;
+	[SerializeField]
+	private Transform playerSpawnPoint;
 
-    public override void InstallBindings()
+	public override void InstallBindings()
     {
         Container.Bind<InputActions>().AsSingle();
-        Container.Bind<PlayerMovement>().AsSingle();
-        Container.Bind<Player>().FromComponentOn(player).AsSingle();
+        Container.BindInterfacesAndSelfTo<PlayerMovement>().AsSingle();
+
+		var player = Container.InstantiatePrefabForComponent<Player>(playerPrefab, playerSpawnPoint.position, playerSpawnPoint.rotation, null);
+        Container.Bind<Player>().FromInstance(player).AsSingle();
     }
 }
